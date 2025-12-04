@@ -609,26 +609,85 @@
         </div>
     </div>
 </section>
-    <section id="chisiamo" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title text-3xl sm:text-4xl font-extrabold text-ananas-dark mb-16 inline-block pb-2 pl-4">Marco Rauzi - Filmmaker</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                <div class="lg:col-span-1 flex flex-col items-center">
-                    <img src="marcorauzi.jpg" alt="Foto di Marco Rauzi, Regista e D.O.P." class="w-full max-w-xs rounded-2xl shadow-2xl border-4 border-ananas-orange transform -rotate-1 hover:rotate-0 transition" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjdhOTM4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFlMWUxZSI+TWFyY28gUmF1emk8L3RleHQ+PC9zdmc+';">
-                    <p class="text-ananas-dark text-lg mt-3 font-semibold">Regista, D.O.P. & Montatore</p>
+  <!-- Sezione Chi Siamo (aggiornata) -->
+<section id="chisiamo" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Titolo centrato nello stile degli altri -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center mb-4">
+                <div class="w-3 h-3 bg-ananas-orange rounded-full mr-2"></div>
+                <span class="text-sm font-semibold tracking-wider text-ananas-orange uppercase">Chi Siamo</span>
+                <div class="w-3 h-3 bg-ananas-orange rounded-full ml-2"></div>
+            </div>
+            <h2 class="section-title font-display text-3xl sm:text-4xl font-bold text-ananas-dark mb-6 inline-block pb-2">
+                Marco Rauzi - Filmmaker
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div class="lg:col-span-1 flex flex-col items-center">
+                <div class="relative">
+                    <img src="marcorauzi.jpg" alt="Foto di Marco Rauzi, Regista e D.O.P." 
+                         class="w-full max-w-xs rounded-2xl shadow-2xl border-4 border-ananas-orange transform -rotate-1 hover:rotate-0 transition" 
+                         loading="lazy" 
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjdhOTM4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFlMWUxZSI+TWFyY28gUmF1emk8L3RleHQ+PC9zdmc+';">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-ananas-orange/20 to-ananas-gold/20 rounded-2xl blur-xl -z-10"></div>
                 </div>
-                <div class="lg:col-span-2 bg-gray-50 p-10 rounded-2xl shadow-xl space-y-6 text-gray-700 border border-ananas-orange/50">
-                    <p>Laureato in Lettere ad indirizzo archeologico, ha interesse per le attività umane in rapporto alla natura e al territorio.</p>
-                    <h3 class="text-xl font-bold text-ananas-dark border-b border-ananas-dark/20 pb-1">Riconoscimenti</h3>
-                    <ul class="list-disc list-outside space-y-2 ml-5">
-                        <li>Best Cinematography (24 Hour film race NY) per "Not Suited for Change".</li>
-                        <li>Premio IOG al Trento Film Festival 2015.</li>
-                    </ul>
-                    <p class="pt-4 text-center"><a href="https://www.trentinofilmcommission.it/it/professionals/detail/marco-rauzi/" target="_blank" rel="noopener noreferrer" class="inline-block text-ananas-orange font-semibold hover:underline focus-visible-outline">Scheda su Trentino Film Commission &rarr;</a></p>
+                <div class="mt-6 text-center">
+                    <p class="font-display text-lg font-semibold text-ananas-dark">Marco Rauzi</p>
+                    <p class="text-sm text-gray-600 mt-1">Regista, D.O.P. & Montatore</p>
+                    <div class="mt-4">
+                        <a href="https://www.trentinofilmcommission.it/it/professionals/detail/marco-rauzi/" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center text-sm font-medium text-ananas-orange hover:text-ananas-dark transition duration-200">
+                            Scheda su Trentino Film Commission
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <div class="lg:col-span-2 bg-gray-50 p-10 rounded-2xl shadow-xl space-y-6 text-gray-700 border border-ananas-orange/50">
+                <p class="text-lg leading-relaxed">
+                    Laureato in Lettere ad indirizzo archeologico, sviluppo un interesse particolare per le attività umane 
+                    in rapporto alla natura e al territorio. La mia formazione accademica si fonde con la passione per la 
+                    narrazione visiva, creando produzioni che uniscono rigore metodologico e sensibilità artistica.
+                </p>
+                
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h3 class="font-display text-xl font-bold text-ananas-dark mb-4 border-b border-ananas-dark/20 pb-2">
+                        Riconoscimenti
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-ananas-orange mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-gray-600">
+                                <span class="font-semibold">Best Cinematography</span> - 24 Hour film race NY per "Not Suited for Change"
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-ananas-orange mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-gray-600">
+                                <span class="font-semibold">Premio IOG</span> - Trento Film Festival 2015
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <p class="text-gray-500 italic text-sm pt-2">
+                    Ogni progetto è un'opportunità per esplorare nuove forme di narrazione visiva, 
+                    mantenendo sempre al centro la storia da raccontare.
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="contatti" class="py-16 sm:py-24 bg-ananas-orange">
         <div class="max-w-xl mx-auto px-4 text-center text-ananas-dark">
