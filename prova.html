@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananas Video - Produzioni Creative | Video professionali, documentari e contenuti istituzionali</title>
+    
+    <!-- Meta tags SEO migliorati -->
+    <meta name="description" content="Ananas Video - Produzioni cinematografiche professionali a Trento. Documentari, video istituzionali, contenuti per ricerca scientifica e serie TV. Regia, riprese e montaggio.">
+    <meta name="keywords" content="produzione video Trento, documentari, video istituzionali, riprese professionali, montaggio video, videomaker, filmmaker, video per ricerca, serie TV, video aziendali">
+    <meta name="author" content="Ananas Video">
+    <meta property="og:title" content="Ananas Video - Produzioni Creative">
+    <meta property="og:description" content="Produzioni video professionali con visione cinematografica">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ananasvideo.com">
+    <link rel="canonical" href="https://ananasvideo.com">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ananas-orange': '#f7a938',
+                        'ananas-dark': '#1e1e1e',
+                        'ananas-accent': '#a0522d',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Import Font Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        .hero-title-font { font-family: 'Poppins', sans-serif; }
+        
+        /* Stile Titoli di Sezione */
+        .section-title { position: relative; display: inline-block; }
+        .section-title::after {
+            content: ''; position: absolute; left: 0; bottom: -5px;
+            width: 100%; height: 6px; background-color: #f7a938; 
+            border-radius: 9999px; z-index: -1; opacity: 0.5;
+        }
+
+        /* SLIDER STYLES */
+        .video-container-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .slider-item {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+            z-index: 0;
+        }
+
+        .slider-item.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        .slider-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Didascalie */
+        .slider-caption { display: none; }
+        .slider-caption.active { display: block; animation: fadeInUp 0.5s ease-out; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Classe per bloccare lo scroll su mobile */
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        /* Miglioramenti accessibilità */
+        .focus-visible-outline:focus-visible {
+            outline: 3px solid #f7a938;
+            outline-offset: 2px;
+        }
+
+        /* Pulsanti slider navigazione */
+        .slider-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .slider-nav-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .slider-nav-button:focus {
+            outline: 3px solid #f7a938;
+            outline-offset: 2px;
+        }
+        .slider-nav-button.prev { left: 20px; }
+        .slider-nav-button.next { right: 20px; }
+
+        @media (max-width: 768px) {
+            .slider-nav-button {
+                width: 40px;
+                height: 40px;
+            }
+            .slider-nav-button.prev { left: 10px; }
+            .slider-nav-button.next { right: 10px; }
+        }
+    </style>
+    
+    <!-- Google Analytics (da configurare con il tuo ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+</head>
+<body class="bg-white text-ananas-dark font-sans antialiased">
+
+    <header class="bg-ananas-dark text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="flex items-center space-x-2 transition duration-300 hover:scale-[1.05] focus-visible-outline" aria-label="Torna alla home">
+                    <!-- Logo con fallback SVG inline per maggiore affidabilità -->
+               
+
+    <!-- Logo PNG con fallback elegante -->
+    <div class="relative">
+        <img src="ananasvideo_logo.png" alt="Logo Ananas Video" 
+             class="h-10 w-10 rounded-full shadow-lg object-cover border-2 border-ananas-orange"
+             loading="eager"
+             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9IiNmN2E5MzgiLz48dGV4dCB4PSIyMCIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZTFmMWUiPkFWPC90ZXh0Pjwvc3ZnPg==';">
+        <div class="absolute -inset-1 bg-ananas-orange rounded-full opacity-20 blur-sm -z-10"></div>
+    </div>
+    <span class="hero-title-font text-xl font-bold tracking-wider text-ananas-orange">ANANAS VIDEO</span>
+</a>
+                
+                <nav class="hidden md:flex space-x-8" aria-label="Navigazione principale">
+                    <a href="#servizi" class="text-gray-300 hover:text-ananas-orange transition duration-200 hover:underline hover:underline-offset-4 focus-visible-outline">Servizi</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-ananas-orange transition duration-200 hover:underline hover:underline-offset-4 focus-visible-outline">Portfolio</a>
+                    <a href="#collaborazioni" class="text-gray-300 hover:text-ananas-orange transition duration-200 hover:underline hover:underline-offset-4 focus-visible-outline">Ricerca</a>
+                    <a href="#chisiamo" class="text-gray-300 hover:text-ananas-orange transition duration-200 hover:underline hover:underline-offset-4 focus-visible-outline">Chi Siamo</a>
+                    <a href="#contatti" class="text-gray-300 hover:text-ananas-orange transition duration-200 hover:underline hover:underline-offset-4 focus-visible-outline">Contatti</a>
+                </nav>
+                
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-ananas-orange hover:text-white hover:bg-ananas-accent focus:outline-none focus:ring-2 focus:ring-ananas-orange transition duration-200" aria-label="Apri menu mobile" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div id="mobile-menu" class="fixed inset-0 bg-ananas-dark/95 z-40 hidden md:hidden transition-transform duration-300 ease-in-out" aria-hidden="true">
+        <div class="pt-20 px-4 space-y-4">
+            <a href="#servizi" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-ananas-orange hover:bg-ananas-accent hover:text-white transition duration-200 focus-visible-outline" tabindex="-1">Servizi</a>
+            <a href="#portfolio" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-ananas-orange hover:bg-ananas-accent hover:text-white transition duration-200 focus-visible-outline" tabindex="-1">Portfolio</a>
+            <a href="#collaborazioni" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-ananas-orange hover:bg-ananas-accent hover:text-white transition duration-200 focus-visible-outline" tabindex="-1">Ricerca</a>
+            <a href="#chisiamo" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-ananas-orange hover:bg-ananas-accent hover:text-white transition duration-200 focus-visible-outline" tabindex="-1">Chi Siamo</a>
+            <a href="#contatti" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-ananas-orange hover:bg-ananas-accent hover:text-white transition duration-200 focus-visible-outline" tabindex="-1">Contatti</a>
+        </div>
+    </div>
+    
+    <section id="ultimi-lavori" class="bg-ananas-orange text-ananas-dark py-6 text-center shadow-lg">
+        <h2 class="hero-title-font text-3xl sm:text-4xl font-extrabold drop-shadow-md">Alcuni dei Nostri Lavori</h2>
+    </section>
+
+    <section id="hero" class="relative bg-ananas-dark" aria-label="Galleria video portfolio">
+        <div class="video-container-wrapper">
+            <!-- Pulsanti navigazione slider -->
+            <button class="slider-nav-button prev" onclick="prevSlide()" aria-label="Video precedente">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            
+            <button class="slider-nav-button next" onclick="nextSlide()" aria-label="Video successivo">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+            
+            <!-- Video con lazy loading -->
+            <div class="slider-item active">
+                <iframe id="video-0" src="https://www.youtube.com/embed/MIPTiifFWJ4?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Serie TV Storica: Adelchi"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-1" src="https://www.youtube.com/embed/qvQ2AGH0gj8?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Documentario Sociale"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-2" src="https://www.youtube.com/embed/8lsNW3KNBHg?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Video Istituzionale MUSE"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-3" src="https://www.youtube.com/embed/hIdyl0WATN4?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Promo Università di Trento"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-4" src="https://www.youtube.com/embed/XC5lS3QKU1A?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Video Aziendale: Asilo Martignano"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-5" src="https://www.youtube.com/embed/uYDgUELVyvM?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Documentario Storico: Cloz 1945"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-6" src="https://www.youtube.com/embed/wzQ-FUUj3Dc?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Documentario d'Arte: Zanoni"></iframe>
+            </div>
+
+            <div class="slider-item">
+                <iframe id="video-7" src="https://www.youtube.com/embed/M_rchUH_6uM?controls=1&rel=0&showinfo=0&enablejsapi=1" allow="encrypted-media" allowfullscreen loading="lazy" title="Educa Immagine"></iframe>
+            </div>
+
+        </div>
+
+        <div class="bg-ananas-orange text-ananas-dark py-10 text-center relative">
+            <div class="max-w-4xl mx-auto px-4">
+                
+                <div id="caption-0" class="slider-caption active" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Serie TV Storica: Adelchi</h1>
+                    <p class="text-lg mb-4">Produzione televisiva in 9 puntate per History Lab sulla vita e l'opera di Adelchi.</p>
+                    <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-1" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Documentario Sociale</h1>
+                    <p class="text-lg mb-4">"Questo non c'entra niente" - Selezionato al Festival "Lo Spiraglio" MAXXI Roma.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-2" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Video Istituzionale MUSE</h1>
+                    <p class="text-lg mb-4">Promozione internazionale per il MUSE - Museo delle Scienze di Trento.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-3" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Promo Università di Trento</h1>
+                    <p class="text-lg mb-4">Video promozionale istituzionale per l'Ateneo di Trento.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-4" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Video Aziendale: Asilo Martignano</h1>
+                    <p class="text-lg mb-4">Produzione ufficiale per enti e istituzioni, con focus su strutture formative.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-5" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Documentario Storico: Cloz 1945</h1>
+                    <p class="text-lg mb-4">Memorie di Cloz: Un viaggio nella storia e nel territorio.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-6" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Documentario d'Arte: Zanoni</h1>
+                    <p class="text-lg mb-4">L'età del ferro - Racconto di artigianato artistico e tradizione.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div id="caption-7" class="slider-caption" aria-live="polite">
+                    <h1 class="hero-title-font text-3xl sm:text-4xl font-extrabold mb-2">Educa Immagine</h1>
+                    <p class="text-lg mb-4">Video realizzato per Trentino Film Commission.</p>
+                     <a href="#contatti" class="inline-block bg-ananas-dark text-ananas-orange font-bold text-md py-2 px-6 rounded-full shadow-xl transform hover:scale-105 transition duration-300 ease-in-out focus-visible-outline">
+                        Inizia il tuo progetto &rarr;
+                    </a>
+                </div>
+
+                <div class="flex justify-center space-x-3 mt-6" role="tablist" aria-label="Selezione video">
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-100 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(0)" role="tab" aria-selected="true" aria-label="Video 1: Adelchi" tabindex="0"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(1)" role="tab" aria-selected="false" aria-label="Video 2: Documentario Sociale" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(2)" role="tab" aria-selected="false" aria-label="Video 3: MUSE" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(3)" role="tab" aria-selected="false" aria-label="Video 4: UNITN" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(4)" role="tab" aria-selected="false" aria-label="Video 5: Asilo Martignano" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(5)" role="tab" aria-selected="false" aria-label="Video 6: Cloz 1945" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(6)" role="tab" aria-selected="false" aria-label="Video 7: Zanoni" tabindex="-1"></button>
+                    <button class="slider-indicator w-3 h-3 bg-ananas-dark opacity-40 rounded-full transition duration-300 transform hover:scale-125 focus-visible-outline" onclick="currentSlide(7)" role="tab" aria-selected="false" aria-label="Video 8: Educa Immagine" tabindex="-1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="servizi" class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in-up">
+            <div class="inline-flex items-center justify-center mb-4">
+              
+                <h2 class="hero-title-font text-3xl sm:text-4xl font-extrabold drop-shadow-md">I Nostri Servizi</h2>
+                
+            </div>
+          <!--  <h2 class="section-title font-display text-4xl font-bold text-ananas-dark mb-6">Produzioni Cinematografiche</h2> -->
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Trasformiamo idee e storie in contenuti visivi di alta qualità, con un approccio cinematografico 
+                e attenzione ai dettagli che contraddistingue il nostro lavoro.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Servizio 1 - Documentari -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-ananas-orange to-ananas-gold rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-elegant border border-gray-100 card-hover h-full">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-ananas-orange/10 to-ananas-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                            <svg class="w-7 h-7 text-ananas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-ananas-dark mb-3 group-hover:text-ananas-orange transition duration-300">Documentari e Interviste</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Narrazioni approfondite che uniscono rigore giornalistico e sensibilità artistica, 
+                            ideali per contenuti istituzionali e storytelling d'autore.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Documentari istituzionali
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Interviste specialistiche
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Reportage di approfondimento
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servizio 2 - Contenuti Social -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-ananas-orange to-ananas-gold rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-elegant border border-gray-100 card-hover h-full">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-ananas-orange/10 to-ananas-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                            <svg class="w-7 h-7 text-ananas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-ananas-dark mb-3 group-hover:text-ananas-orange transition duration-300">Contenuti Social e Reel</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Video dinamici e coinvolgenti ottimizzati per i social media, perfetti per 
+                            massimizzare engagement e visibilità del tuo brand.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Reel Instagram/TikTok
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Video promozionali brevi
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Contenuti per campagne
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servizio 3 - Video per Ricerca -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-ananas-orange to-ananas-gold rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-elegant border border-gray-100 card-hover h-full">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-ananas-orange/10 to-ananas-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                            <svg class="w-7 h-7 text-ananas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-ananas-dark mb-3 group-hover:text-ananas-orange transition duration-300">Video per la Ricerca</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Comunicazione scientifica attraverso storytelling visivo, trasformando 
+                            dati complessi in narrazioni accessibili e coinvolgenti.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Comunicazione scientifica
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Video per università
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Documentari di ricerca
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servizio 4 - Serie TV -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-ananas-orange to-ananas-gold rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-elegant border border-gray-100 card-hover h-full">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-ananas-orange/10 to-ananas-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                            <svg class="w-7 h-7 text-ananas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-ananas-dark mb-3 group-hover:text-ananas-orange transition duration-300">Serie TV Culturali</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Produzione e direzione di contenuti educativi e serie televisive di qualità, 
+                            con attenzione alla narrazione e alla produzione cinematografica.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Serie TV educative
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Documentari in serie
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Contenuti formativi
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servizio 5 - Backstage (stesso stile degli altri) -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-ananas-orange to-ananas-gold rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-elegant border border-gray-100 card-hover h-full">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-ananas-orange/10 to-ananas-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition duration-300">
+                            <svg class="w-7 h-7 text-ananas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-ananas-dark mb-3 group-hover:text-ananas-orange transition duration-300">Backstage e Foto di Scena</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Documentazione professionale del processo creativo dietro le quinte, 
+                            per valorizzare il lavoro del team e creare contenuti aggiuntivi di qualità.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Reportage dietro le quinte
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Foto di scena professionali
+                            </li>
+                            <li class="flex items-center text-xs text-gray-500">
+                                <svg class="w-4 h-4 text-ananas-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Making of e contenuti extra
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="collaborazioni" class="py-16 sm:py-24 bg-ananas-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- TITOLO MODIFICATO: Centrato e in stile uniforme -->
+            <div class="text-center mb-16">
+                <h2 class="hero-title-font text-3xl sm:text-4xl font-extrabold drop-shadow-md text-ananas-orange mb-4">
+                    Alcune delle Nostre Collaborazioni
+                </h2>
+            
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto text-center">
+                    Siamo specializzati nel raccontare in modo cinematografico la Ricerca scientifica. Collaboriamo con enti universitari e centri di ricerca.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-2xl">
+                <div class="grid grid-cols-3 md:grid-cols-6 gap-8 justify-items-center items-center">
+                    <a href="https://www.muse.it" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="MUSE - Museo delle Scienze di Trento">
+                        <img src="https://www.viviparchi.eu/catalogue/4/4/1444/Muse_logo-x-sito.gif" alt="Logo MUSE - Museo delle Scienze di Trento" class="h-12 w-auto mx-auto object-contain" loading="lazy">
+                    </a>
+                    <a href="https://www.unitn.it" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="UNITN - Università di Trento">
+                        <img src="https://www.cimec.unitn.it/sites/all/themes/dipartimenti/images/logo_unitrento_it.png" alt="Logo UNITN - Università di Trento" class="h-12 w-auto mx-auto object-contain" loading="lazy">
+                    </a>
+                    <a href="https://www.cimec.unitn.it/it" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="CIMeC - Centro di Scienze della Mente e del Cervello">
+                        <img src="https://www.cimec.unitn.it/file/cimec/images/bannertestata/cimec-310x120_0.jpg" alt="Logo CIMeC" class="h-12 w-auto mx-auto object-contain" loading="lazy">
+                    </a>
+                    <a href="https://www.fbk.eu" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="FBK - Fondazione Bruno Kessler">
+                        <img src="https://images.seeklogo.com/logo-png/39/1/fondazione-bruno-kessler-fbk-logo-png_seeklogo-397691.png" alt="Logo FBK - Fondazione Bruno Kessler" class="h-12 w-auto mx-auto object-contain" loading="lazy">
+                    </a>
+                    <a href="https://www.eitdigital.eu" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="EIT Digital">
+                        <img src="https://www.eit.europa.eu/sites/default/files/Digital-8.jpg" alt="Logo EIT Digital" class="h-12 w-auto mx-auto object-contain" loading="lazy">
+                    </a>
+                    <a href="https://museostorico.it/" target="_blank" rel="noopener noreferrer" class="block p-2 text-center hover:opacity-80 transition focus-visible-outline" aria-label="FMST - Fondazione Museo Storico del Trentino">
+                        <div class="h-12 flex items-center justify-center">
+                            <span class="text-ananas-dark font-bold text-lg">FMST</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chisiamo" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- TITOLO MODIFICATO: Centrato -->
+            <div class="text-center mb-16">
+                <h2 class="hero-title-font text-3xl sm:text-4xl font-extrabold drop-shadow-md inline-block pb-2 mb-4">
+                    Marco Rauzi - Filmmaker
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-1 flex flex-col items-center">
+                    <img src="marcorauzi.jpg" alt="Foto di Marco Rauzi, Regista e D.O.P." class="w-full max-w-xs rounded-2xl shadow-2xl border-4 border-ananas-orange transform -rotate-1 hover:rotate-0 transition" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjdhOTM4Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFlMWUxZSI+TWFyY28gUmF1emk8L3RleHQ+PC9zdmc+';">
+                    <p class="text-ananas-dark text-lg mt-3 font-semibold">Regista, D.O.P. & Montatore</p>
+                </div>
+                <div class="lg:col-span-2 bg-gray-50 p-10 rounded-2xl shadow-xl space-y-6 text-gray-700 border border-ananas-orange/50">
+                    <p>Laureato in Lettere ad indirizzo archeologico, ha interesse per le attività umane in rapporto alla natura e al territorio.</p>
+                    <h3 class="text-xl font-bold text-ananas-dark border-b border-ananas-dark/20 pb-1">Riconoscimenti</h3>
+                    <ul class="list-disc list-outside space-y-2 ml-5">
+                        <li>Best Cinematography (24 Hour film race NY) per "Not Suited for Change".</li>
+                        <li>Premio IOG al Trento Film Festival 2015.</li>
+                    </ul>
+                    <p class="pt-4 text-center"><a href="https://www.trentinofilmcommission.it/it/professionals/detail/marco-rauzi/" target="_blank" rel="noopener noreferrer" class="inline-block text-ananas-orange font-semibold hover:underline focus-visible-outline">Scheda su Trentino Film Commission &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="py-16 sm:py-24 bg-ananas-orange">
+        <div class="max-w-xl mx-auto px-4 text-center text-ananas-dark">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Contattaci</h2>
+            <div class="space-y-6 bg-white p-8 rounded-2xl shadow-2xl border-4 border-ananas-dark">
+                <!-- Email -->
+                <div class="text-left border-b pb-4">
+                    <p class="text-sm font-semibold text-gray-600">Email</p>
+                    <a href="mailto:ananasvideostudio@gmail.com" class="text-2xl font-bold text-ananas-dark hover:text-ananas-accent break-words">ananasvideostudio@gmail.com</a>
+                </div>
+                
+                <div class="text-left border-b pb-4">
+                    <p class="text-sm font-semibold text-gray-600">Mobile</p>
+                    <a href="tel:+393284152022" class="text-2xl font-bold text-ananas-dark hover:text-ananas-accent">+39 328 4152022</a>
+                </div>
+                <div class="text-left border-b pb-4">
+                    <p class="text-sm font-semibold text-gray-600">Telegram</p>
+                    <a href="https://t.me/murcok" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-ananas-dark hover:text-ananas-accent">t.me/murcok</a>
+                </div>
+                <div class="text-left">
+                    <p class="text-sm font-semibold text-gray-600">Instagram</p>
+                    <a href="https://www.instagram.com/murcok/" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-ananas-dark hover:text-ananas-accent">@murcok</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-ananas-dark text-gray-400 py-8 text-center">
+        <p class="text-sm">&copy; 2025 Ananas Video. Tutti i diritti riservati.</p>
+        <p class="text-xs mt-2">ananasvideostudio@gmail.com | +39 328 4152022</p>
+    </footer>
+
+    <script>
+        // =========================================
+        // LOGICA MENU MOBILE
+        // =========================================
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        function toggleMobileMenu() {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+            mobileMenuButton.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+            mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+        }
+
+        // Gestione swipe per chiudere il menu su mobile
+        function handleTouchStart(e) {
+            touchStartY = e.changedTouches[0].screenY;
+        }
+
+        function handleTouchMove(e) {
+            touchEndY = e.changedTouches[0].screenY;
+            const diff = touchStartY - touchEndY;
+            
+            // Se lo swipe verso il basso è significativo (> 50px) e siamo in alto
+            if (diff < -50 && window.scrollY === 0) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Aggiungi event listener per swipe
+        mobileMenu.addEventListener('touchstart', handleTouchStart, false);
+        mobileMenu.addEventListener('touchmove', handleTouchMove, false);
+
+        // Apri/Chiudi il menu al click del bottone
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Chiudi il menu quando si clicca su un link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // =========================================
+        // Smooth scroll (Aggiornato per l'header fisso)
+        // =========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Se il link è nel menu mobile, chiudi prima il menu
+                if (e.target.classList.contains('mobile-nav-link')) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                }
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                // 64px è l'altezza del tuo header (h-16 = 4rem = 64px)
+                const headerHeight = 64; 
+                
+                if (target) {
+                    window.scrollTo({ 
+                        top: target.offsetTop - headerHeight, 
+                        behavior: 'smooth' 
+                    });
+                }
+            });
+        });
+
+        // =========================================
+        // LOGICA SLIDER VIDEO
+        // =========================================
+        const videoIds = [
+            "MIPTiifFWJ4", // 0: Adelchi
+            "qvQ2AGH0gj8", // 1: Teaser
+            "8lsNW3KNBHg", // 2: MUSE
+            "hIdyl0WATN4", // 3: Promo UNITN
+            "XC5lS3QKU1A", // 4: Asilo Martignano
+            "uYDgUELVyvM", // 5: Cloz
+            "wzQ-FUUj3Dc", // 6: Zanoni
+            "M_rchUH_6uM"  // 7: Educa
+        ];
+
+        let players = [];
+        let slideIndex = 0;
+        let sliderTimeout;
+        const SLIDE_DURATION = 6000;
+        let isPlaying = false;
+        let youtubeAPILoaded = false;
+
+        // Controlla se YouTube API è caricata
+        function checkYouTubeAPI() {
+            if (typeof YT === 'undefined' || typeof YT.Player === 'undefined') {
+                console.warn('YouTube API non caricata, usando fallback statico');
+                // Fallback: mostra solo il primo video
+                document.querySelectorAll('.slider-item:not(:first-child)').forEach(el => {
+                    el.style.display = 'none';
+                });
+                // Disabilita i pulsanti di navigazione
+                document.querySelectorAll('.slider-nav-button').forEach(btn => {
+                    btn.style.display = 'none';
+                });
+                return false;
+            }
+            return true;
+        }
+
+        function onYouTubeIframeAPIReady() {
+            youtubeAPILoaded = true;
+            if (!checkYouTubeAPI()) return;
+            
+            videoIds.forEach((id, index) => {
+                const frame = document.getElementById('video-' + index);
+                if(frame) {
+                    players[index] = new YT.Player('video-' + index, {
+                        events: { 'onStateChange': onPlayerStateChange }
+                    });
+                }
+            });
+            startSlider();
+        }
+
+        // Fallback se l'API non si carica entro 5 secondi
+        setTimeout(() => {
+            if (!youtubeAPILoaded) {
+                checkYouTubeAPI();
+            }
+        }, 5000);
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                isPlaying = true;
+                clearTimeout(sliderTimeout);
+            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                isPlaying = false;
+                if (!isPlaying) {
+                    startSlider();
+                }
+            }
+        }
+
+        function startSlider() {
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+            sliderTimeout = setTimeout(nextSlide, SLIDE_DURATION);
+        }
+
+        function prevSlide() {
+            if (isPlaying) return;
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+            updateUI(slideIndex, false);
+            slideIndex--;
+            if (slideIndex < 0) slideIndex = videoIds.length - 1;
+            updateUI(slideIndex, true);
+            if (!isPlaying) startSlider();
+        }
+
+        function nextSlide() {
+            if (isPlaying) return;
+            updateUI(slideIndex, false);
+            slideIndex++;
+            if (slideIndex >= videoIds.length) slideIndex = 0;
+            updateUI(slideIndex, true);
+            startSlider();
+        }
+
+        function changeSlide(n) {
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+            updateUI(slideIndex, false);
+            slideIndex = n;
+            updateUI(slideIndex, true);
+            if (!isPlaying) startSlider();
+        }
+
+        // Alias per l'HTML onclick
+        function currentSlide(n) {
+            changeSlide(n);
+        }
+
+        function updateUI(index, visible) {
+            const slides = document.getElementsByClassName("slider-item");
+            const captions = document.getElementsByClassName("slider-caption");
+            const dots = document.getElementsByClassName("slider-indicator");
+
+            // Pausa TUTTI i video prima di cambiare
+            players.forEach((player, i) => {
+                if (player && typeof player.pauseVideo === 'function') {
+                    player.pauseVideo();
+                }
+            });
+
+            if (visible) {
+                // Aggiorna stato tab per accessibilità
+                Array.from(dots).forEach((dot, i) => {
+                    dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+                    dot.setAttribute('tabindex', i === index ? '0' : '-1');
+                });
+
+                if(slides[index]) slides[index].classList.add("active");
+                if(captions[index]) captions[index].classList.add("active");
+                if(dots[index]) {
+                    dots[index].classList.remove("opacity-40");
+                    dots[index].classList.add("opacity-100");
+                }
+            } else {
+                if(slides[index]) slides[index].classList.remove("active");
+                if(captions[index]) captions[index].classList.remove("active");
+                if(dots[index]) {
+                    dots[index].classList.remove("opacity-100");
+                    dots[index].classList.add("opacity-40");
+                }
+            }
+        }
+
+        // =========================================
+        // Gestione form contatto
+        // =========================================
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Qui puoi aggiungere la logica per inviare il form
+                // Ad esempio usando Formspree, EmailJS o un backend personalizzato
+                
+                // Per ora mostriamo un alert di conferma
+                alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
+                contactForm.reset();
+                
+                // Scroll alla sezione contatti
+                document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // =========================================
+        // Gestione tasti freccia per slider
+        // =========================================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        // Inizializza lo slider
+        window.addEventListener('load', function() {
+            if (!checkYouTubeAPI()) {
+                // Se YouTube API non è disponibile, avvia comunque lo slider per le didascalie
+                startSlider();
+            }
+        });
+    </script>
+</body>
+</html>
